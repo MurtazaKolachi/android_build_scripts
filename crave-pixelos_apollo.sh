@@ -1,0 +1,13 @@
+rm -rf .repo/local_manifests ; \
+rm -rf {device,vendor,kernel,hardware}/xiaomi ; \
+repo init --depth=1 --no-repo-verify -u https://github.com/PixelOS-AOSP/manifest.git -b fifteen --git-lfs -g default,-mips,-darwin,-notdefault && \
+git clone https://github.com/MurtazaKolachi/android_build_manifest.git -b apollo-pos15 .repo/local_manifests && \
+/opt/crave/resync.sh && \
+export BUILD_USERNAME=Murtaza ; \
+export BUILD_HOSTNAME=crave ; \
+export TZ=Asia/islamabad ; \
+repo forall -c 'git lfs pull' ; \
+source build/envsetup.sh && \
+lunch aosp_apollo-ap3a-user && \
+make installclean ; \
+mka bacon
