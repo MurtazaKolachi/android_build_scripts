@@ -6,6 +6,5 @@ git clone https://github.com/MurtazaKolachi/android_build_manifest.git -b apollo
 export BUILD_USERNAME=Murtaza ; \
 export BUILD_HOSTNAME=crave ; \
 export TZ=Asia/Islamabad ; \
-repo forall -c 'git lfs pull' ; \
 source build/envsetup.sh && \
 brunch apollo
