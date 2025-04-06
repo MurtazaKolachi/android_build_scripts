@@ -12,5 +12,4 @@ export TZ=Asia/Islamabad ; \
 export RELAX_USES_LIBRARY_CHECK=true && \
 source build/envsetup.sh && \
 lunch lineage_apollo-bp1a-userdebug && \
-make installclean && \
 m evolution
